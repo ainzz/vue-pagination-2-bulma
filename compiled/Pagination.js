@@ -27,6 +27,10 @@ module.exports = {
       type: String,
       required: false,
       default: 'Showing {from} to {to} of {count} records|{count} records|One record'
+    },
+    modifiers: {
+      type: String,
+      default: ''
     }
   },
   computed: {
@@ -88,14 +92,14 @@ module.exports = {
     allowedChunk: function allowedChunk(direction) {
       return direction == 1 && this.currentChunk < this.totalChunks || direction == -1 && this.currentChunk > 1;
     },
-    allowedPageClass: function allowedPageClass(direction) {
-      return this.allowedPage(direction) ? '' : 'disabled';
+    pageLinkDisabled: function pageLinkDisabled(direction) {
+      return this.allowedPage(direction) ? false : true;
     },
-    allowedChunkClass: function allowedChunkClass(direction) {
-      return this.allowedChunk(direction) ? '' : 'disabled';
+    chunkLinkDisabled: function chunkLinkDisabled(direction) {
+      return this.allowedChunk(direction) ? false : true;
     },
     activeClass: function activeClass(page) {
-      return this.page == page ? 'active' : '';
+      return this.page == page ? 'is-current' : '';
     }
   }
 };

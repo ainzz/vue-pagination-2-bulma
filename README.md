@@ -1,10 +1,11 @@
-# Vue Pagination 2
+# Vue 2 Pagination with Bulma CSS
 
-Note: This package is for use with Vuejs 2.
-For version 1 please use [v-pagination](https://www.npmjs.com/package/v-pagination) instead.
+This is a Fork from [matfish2/vue-pagination-2](https://github.com/matfish2/vue-pagination-2) which uses Bootstrap Css.
+
+Note: This package is for use with Vuejs 2. For version 1 please use [v-pagination](https://www.npmjs.com/package/v-pagination) instead.
 
 Simple, generic and non-intrusive pagination component for Vue.js version 2.
-Presentation is based on bootstrap.
+Presentation is based on Bulma.
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
@@ -16,15 +17,15 @@ Presentation is based on bootstrap.
 # Dependencies
 
 * Vue.js (>=2.0.0-rc.1). Required.
-* Bootstrap (CSS). Optional.
+* Bulma (CSS). Optional.
 
 # Installation
 
-    npm install vue-pagination-2
+    npm install vue-pagination-2-bulma
 
 import the script:
 
-    import {VuePagination, VueEvent} from 'vue-pagination-2';
+    import {VuePagination, VueEvent} from 'vue-pagination-2-bulma';
 
 # Usage
 
@@ -45,6 +46,7 @@ props:
 * `records` `number` `required` number of records
 * `per-page` `number` `optional` records per page. Default: `25`
 * `chunk` `number` `optional` max pages per chunk. Default: `10`
+* `modifiers` `string` `optional` bulma pagination modifiers, e.g. 'is-right is-medium'
 * `count-text` `string` `optional` total records text. It can consist of up to 3 parts, divided by `|`.
   * First part: used when there are multiple pages
   * Second part: used when there is only one page

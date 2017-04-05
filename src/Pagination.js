@@ -26,6 +26,10 @@ module.exports =
       type: String,
       required: false,
       default: 'Showing {from} to {to} of {count} records|{count} records|One record'
+    },
+    modifiers: {
+      type: String,
+      default: ''
     }
   },
   computed: {
@@ -94,14 +98,14 @@ allowedChunk: function(direction) {
   return (direction==1 && this.currentChunk<this.totalChunks)
   ||  (direction==-1 && this.currentChunk>1);
 },
-allowedPageClass: function(direction) {
-  return this.allowedPage(direction)?'':'disabled';
+pageLinkDisabled: function(direction) {
+  return this.allowedPage(direction)? false : true;
 },
-allowedChunkClass: function(direction) {
-  return this.allowedChunk(direction)?'':'disabled';
+chunkLinkDisabled: function(direction) {
+  return this.allowedChunk(direction)? false : true;
 },
 activeClass: function(page) {
-  return this.page==page?'active':'';
+  return this.page==page?'is-current':'';
 }
 }
 }
