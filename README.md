@@ -1,11 +1,11 @@
 # Vue 2 Pagination with Bulma CSS
 
-This is a Fork from [matfish2/vue-pagination-2](https://github.com/matfish2/vue-pagination-2) which uses Bootstrap Css.
+This is a Fork from [matfish2/vue-pagination-2](https://github.com/matfish2/vue-pagination-2) which uses Bootstrap CSS.
 
 Note: This package is for use with Vuejs 2. For version 1 please use [v-pagination](https://www.npmjs.com/package/v-pagination) instead.
 
 Simple, generic and non-intrusive pagination component for Vue.js version 2.
-Presentation is based on Bulma.
+Presentation is based on Bulma CSS.
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
@@ -25,16 +25,25 @@ Presentation is based on Bulma.
 
 import the script:
 
-    import {VuePagination, VueEvent} from 'vue-pagination-2-bulma';
+    import {Pagination, PaginationEvent} from 'vue-pagination-2';
 
 # Usage
 
-## Register the component(s)
+## Register the component globally or locally:
 
-    Vue.use(VuePagination, [useVuex])
+```js
+Vue.component('pagination', Pagination);
+```
 
-The second parameter is a boolean, which tells the plugin how to manange state.
-If you are using the `bus` option you can simply omit it.
+OR
+
+```js
+...
+components: {
+  Pagination
+}
+...
+```
 
 HTML:
 
@@ -46,6 +55,7 @@ props:
 * `records` `number` `required` number of records
 * `per-page` `number` `optional` records per page. Default: `25`
 * `chunk` `number` `optional` max pages per chunk. Default: `10`
+* `vuex` `boolean` `optional` Use vuex to manage state
 * `modifiers` `string` `optional` bulma pagination modifiers, e.g. 'is-right is-medium'
 * `count-text` `string` `optional` total records text. It can consist of up to 3 parts, divided by `|`.
   * First part: used when there are multiple pages
@@ -61,7 +71,7 @@ props:
 When a page is selected an event will be dispatched, using the unique id for the component.
 Listen to it on your bus and respond accordingly:
 
-      VueEvent.$on('vue-pagination::some-entity', function(page) {
+      PaginationEvent.$on('vue-pagination::some-entity', function(page) {
           // display the relevant records using the page param
       });
 
