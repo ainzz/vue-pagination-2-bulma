@@ -5,7 +5,7 @@ module.exports = function() {
 
   this.pages.map(function(page) {
       items.push(
-        <a class={"pagination-link "+this.activeClass(page)} href="javascript:void(0);"
+        <a class={"pagination-link "+this.activeClass(page)} role="button"
         on-click={this.setPage.bind(this, page)}>{page}</a>
         )
   }.bind(this));

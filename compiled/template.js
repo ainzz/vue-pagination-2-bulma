@@ -8,7 +8,7 @@ module.exports = function () {
     this.pages.map(function (page) {
       items.push(h(
         "a",
-        { "class": "pagination-link " + this.activeClass(page), attrs: { href: "javascript:void(0);"
+        { "class": "pagination-link " + this.activeClass(page), attrs: { role: "button"
           },
           on: {
             "click": this.setPage.bind(this, page)
