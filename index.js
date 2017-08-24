@@ -1,5 +1,5 @@
-var Pagination = require('./src/Pagination');
-var PaginationEvent = require('./src/bus');
+var Pagination = require('./compiled/Pagination');
+var PaginationEvent = require('./compiled/bus');
 
 module.exports = {
 	Pagination: Pagination,
