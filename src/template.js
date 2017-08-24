@@ -17,19 +17,19 @@ module.exports = function () {
 					class="pagination-list">
 
 					<li>
-						<a class="pagination-previous" disabled={this.pageLinkDisabled(this.page - 1)} href="javascript:void(0);"
-							on-click={this.prev.bind(this)}>&lt;</a>
 						<a class="pagination-link" disabled={this.chunkLinkDisabled(-1)} href="javascript:void(0);"
 							on-click={this.setChunk.bind(this, -1)}>&lt;&lt;</a>
+						<a class="pagination-previous" disabled={this.pageLinkDisabled(this.page - 1)} href="javascript:void(0);"
+							on-click={this.prev.bind(this)}>&lt;</a>
 					</li>
 
 					{items}
 
 					<li>
-						<a class="pagination-link" disabled={this.chunkLinkDisabled(1)} href="javascript:void(0);"
-							on-click={this.setChunk.bind(this, 1)}>&gt;&gt;</a>
 						<a class="pagination-next" disabled={this.pageLinkDisabled(this.page + 1)} href="javascript:void(0);"
 							on-click={this.next.bind(this)}>&gt;</a>
+						<a class="pagination-link" disabled={this.chunkLinkDisabled(1)} href="javascript:void(0);"
+							on-click={this.setChunk.bind(this, 1)}>&gt;&gt;</a>
 					</li>
 				</ul>
 			</nav>

@@ -38,15 +38,6 @@ module.exports = function () {
 						null,
 						[h(
 							"a",
-							{ "class": "pagination-previous", attrs: { disabled: this.pageLinkDisabled(this.page - 1), href: "javascript:void(0);"
-								},
-								on: {
-									"click": this.prev.bind(this)
-								}
-							},
-							["<"]
-						), h(
-							"a",
 							{ "class": "pagination-link", attrs: { disabled: this.chunkLinkDisabled(-1), href: "javascript:void(0);"
 								},
 								on: {
@@ -54,20 +45,20 @@ module.exports = function () {
 								}
 							},
 							["<<"]
+						), h(
+							"a",
+							{ "class": "pagination-previous", attrs: { disabled: this.pageLinkDisabled(this.page - 1), href: "javascript:void(0);"
+								},
+								on: {
+									"click": this.prev.bind(this)
+								}
+							},
+							["<"]
 						)]
 					), items, h(
 						"li",
 						null,
 						[h(
-							"a",
-							{ "class": "pagination-link", attrs: { disabled: this.chunkLinkDisabled(1), href: "javascript:void(0);"
-								},
-								on: {
-									"click": this.setChunk.bind(this, 1)
-								}
-							},
-							[">>"]
-						), h(
 							"a",
 							{ "class": "pagination-next", attrs: { disabled: this.pageLinkDisabled(this.page + 1), href: "javascript:void(0);"
 								},
@@ -76,6 +67,15 @@ module.exports = function () {
 								}
 							},
 							[">"]
+						), h(
+							"a",
+							{ "class": "pagination-link", attrs: { disabled: this.chunkLinkDisabled(1), href: "javascript:void(0);"
+								},
+								on: {
+									"click": this.setChunk.bind(this, 1)
+								}
+							},
+							[">>"]
 						)]
 					)]
 				)]
